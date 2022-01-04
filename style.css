@@ -2,8 +2,10 @@ html {
     background-color: rgb(20, 20, 20);
     color: #d5d9e2;
     font-family: Arial;
+    zoom: 1.75;
+    -moz-transform: scale(1.75); 
+    -moz-transform-origin: 0 0;
 }
-
 .mainpage {
     overflow: hidden;
     margin-left: min(35%,200px);
