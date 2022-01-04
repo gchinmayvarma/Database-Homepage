@@ -1,0 +1,211 @@
+html {
+    background-color: rgb(20, 20, 20);
+    color: #d5d9e2;
+    font-family: Arial;
+}
+
+.mainpage {
+    overflow: hidden;
+    margin-left: min(35%,200px);
+    font-size: 14px
+    /* display: inline-block; */
+}
+.inmainpage {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+.sidebar {
+    font-size: 10px;
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 10em;
+    /* or whatever */
+    width: 35%;
+    max-width: 200px;
+    height: 100%;
+}
+
+button {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #193a3f;
+    color: #ecf0f1;
+    transition: background-color .3s;
+}
+
+button:hover,
+button:focus {
+    background-color: #0047b9;
+}
+
+button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+
+/* Styles, not important */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.logo {
+    /* background-color: rgb(50, 50, 50); */
+    width: 100%;
+}
+
+.logogif {
+    /* box-sizing: border-box; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.logotext {
+    position: absolute;
+    color: var(--color);
+    font-size: min(4vw, 20px);
+    flex-direction: column;
+    left: min(11vw, 67px);
+    top: min(15vw, 80px);
+    margin-bottom: 0px;
+}
+
+.logotextright {
+    font-size: min(1.6vw, 10px);
+    margin-top: 0px;
+    margin-left: min(3vw, 20px);
+}
+.collegelogo {
+    /* box-sizing: border-box; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 25%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.stack {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.stack span {
+    font-weight: bold;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    /* font-size: 50%; */
+    --stack-height: calc(100% / var(--stacks) - 1px);
+    --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+    --clip-top: calc(var(--stack-height) * var(--index));
+    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+    animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.stack span:nth-child(odd) {
+    --glitch-translate: 8px;
+}
+
+.stack span:nth-child(even) {
+    --glitch-translate: -8px;
+}
+
+@keyframes stack {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    }
+    ;
+    60% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+    80% {
+        transform: none;
+        opacity: 1;
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+        transform: translate(var(--glitch-translate));
+    }
+    2% {
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    4%,
+    100% {
+        text-shadow: none;
+        transform: none;
+    }
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
+  
+  /* Fade in tabs */
+  @-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

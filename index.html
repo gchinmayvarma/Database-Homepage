@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>360 VR Educator Home page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="sidebar">
+        <div class="logo">
+            <img src="round.gif" class="logogif">
+            <div class="logotext">
+                <div class="stack" style="--stacks: 3;">
+                    <span style="--index: 0;">360 VR</span>
+                    <span style="--index: 1;">360 VR</span>
+                    <span style="--index: 2;">360 VR</span>
+                    <div class="logotextright">Educator</div>
+                </div>
+            </div>
+        </div>
+        <!-- <h6>Dashboard</h6> -->
+        Dashboard
+        <button class="tablinks" role="button" onclick="openPage(event,'Upload')">Upload Files</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'Browse')">Browse Database</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'About' )">About</button>
+        <div>
+            <img src="collegelogo.png" class="collegelogo">
+            <!-- CEMCA LOGO AND OTHER STUFF -->
+        </div>
+    </div>
+    <div class="mainpage">
+        <div id="defaultshot" class="inmainpage">
+            Welcome to the 360 VR Educator Database!
+        </div>
+        <div id="Upload" class="inmainpage">
+            Upload Files to the Database
+        </div>
+        <div id="Browse" class="inmainpage">
+            Browse Database
+        </div>
+        <div id="About" class="inmainpage">
+            Hello
+        </div>
+    </div>
+
+    <script>
+        function openPage(evt, cityName) {
+          var i, tabcontent;
+          tabcontent = document.getElementsByClassName("inmainpage");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultshot").style.display = "block" ;
+        document.getElementById("defaultshot").className += " active";
+        </script>
+</body>
+
+</html>
