@@ -47,36 +47,75 @@
                 Welcome to the 360 VR Educator Database!
             </h1>
             <p>
-                This is the place where you can browse, download, upload and generate links for you file to use in the 360 VR Educator App,
-                <br>
-                <br>
-                
+                This is the place where you can browse, download, upload and generate links for you file to use in the
+                360 VR Educator App,
+            </p>
+            <button role="button" class="linkbutton">Get the App from Playstore!</button>
+            <br><br><br>
+            ⬅ Start Uploading or Browsing by clicking the tabs on the Dashboard.
+            <br>
+            <p>
+                All the Work / Contents / Materials which have been created in this platform are made available
+                under a <a class="aaa" href="http://creativecommons.org/licenses">Creative Commons Attribution-Share Alike 4.0
+                License</a> (International) by CEMCA.<br>
             </p>
         </div>
         <div id="Upload" class="inmainpage">
-            Upload Files to the Database
+            <h1>Upload Files to the Database</h1>
+            All Assets of 360 Videos, 360 Images, sound and such are stored here, which can be used in the 360VR
+            Educator App.
+            <br>Everything which is uploaded is public and can be accessed at anytime.
+            <br>
+            <a href="./Upload/"><button role="button" class="linkbutton">Upload to the Database by clicking here</button></a>
         </div>
         <div id="Browse" class="inmainpage">
-            Browse Database, its nice
+            <h1>Find and Search Files</h1>
+            All Assets of 360 Videos, 360 Images, sound and such are stored here, which can be used in the 360VR
+            Educator App.
+            <br>Everything which is uploaded is public and can be accessed at anytime.
+            <br>
+            <button role="button" class="linkbutton">Access the Database by clicking here</button>
+
         </div>
         <div id="About" class="inmainpage">
-            Hello this is the about section.
+            <h1>Next Era of Learning!</h1>
+            360 VR Educator is an App which brings Virtual Reality to Classrooms to better help students learn and
+            understand concepts, experiencing their lessons with much more immersion which text on paper can provide.
+            <br><br><br>
+            We Aim to provide an Open source Platform for people anywhere at anytime to create and share lessons for
+            everyone to view and learn from.
+            <button role="button" class="linkbutton">Get the App from Playstore!</button>
+            <br><br><strong>Under the Guidance of:</strong><br>Kaushal Kumar Bhagat
+            <br><br><strong>360 VR App Devs:</strong><br>Aaparna, Aaishika
+            <br><br><strong>WebDev:</strong><br>Chinmay
         </div>
     </div>
 
     <script>
-        function openPage(evt, cityName) {
-          var i, tabcontent;
-          tabcontent = document.getElementsByClassName("inmainpage");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
+        function openPage(evt, Name) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("inmainpage");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(Name).style.display = "block";
+            evt.currentTarget.className += " active";
         }
-        document.getElementById("defaultshot").style.display = "block" ;
-        document.getElementById("defaultshot").className += " active";
-        </script>
+        let startopenpage = "defaultshot"
+        document.getElementById(startopenpage).style.display = "block";
+        document.getElementById(startopenpage).className += " active";
+        let details = navigator.userAgent, regexp = /android|iphone|kindle|ipad/i;
+        let isMobileDevice = regexp.test(details);
+        if (!isMobileDevice) {
+            document.body.style.zoom = 1.75;
+            let b = document.getElementsByClassName("linkbutton");
+            for (let i = 0; i < b.length; ++i) {
+                b[i].style.position = "relative";
+                b[i].style.left = "-33%";
+                b[i].style.width = "34%";
+            }
+        }
+    </script>
 </body>
 
 </html>

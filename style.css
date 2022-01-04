@@ -2,11 +2,21 @@ html {
     background-color: rgb(20, 20, 20);
     color: #d5d9e2;
     font-family: Arial;
-    zoom: 1.75;
     -moz-transform: scale(1.75);
     -moz-transform-origin: 0 0;
 }
-
+strong {
+    color: rgb(0, 119, 138);
+}
+.aaa{
+    color: teal;
+}
+.linkbutton{
+    background-color: #31773d;
+}
+.credit{
+    font-size: 14px;
+}
 .mainpage {
     overflow: hidden;
     margin-left: min(35%, 200px);
