@@ -3,15 +3,17 @@ html {
     color: #d5d9e2;
     font-family: Arial;
     zoom: 1.75;
-    -moz-transform: scale(1.75); 
+    -moz-transform: scale(1.75);
     -moz-transform-origin: 0 0;
 }
+
 .mainpage {
     overflow: hidden;
-    margin-left: min(35%,200px);
+    margin-left: min(35%, 200px);
     font-size: 14px
-    /* display: inline-block; */
+        /* display: inline-block; */
 }
+
 .inmainpage {
     display: none;
     padding: 6px 12px;
@@ -120,6 +122,7 @@ button:active:before {
     margin-top: 0px;
     margin-left: min(3vw, 20px);
 }
+
 .collegelogo {
     /* box-sizing: border-box; */
     /* position: absolute; */
@@ -132,6 +135,7 @@ button:active:before {
     -o-user-select: none;
     user-select: none;
 }
+
 .stack {
     display: grid;
     grid-template-columns: 1fr;
@@ -164,16 +168,20 @@ button:active:before {
         transform: translateX(-50%);
         text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
     }
+
     ;
+
     60% {
         opacity: 0.5;
         transform: translateX(50%);
     }
+
     80% {
         transform: none;
         opacity: 1;
         text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
     }
+
     100% {
         text-shadow: none;
     }
@@ -184,9 +192,11 @@ button:active:before {
         text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
         transform: translate(var(--glitch-translate));
     }
+
     2% {
         text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
     }
+
     4%,
     100% {
         text-shadow: none;
@@ -194,20 +204,41 @@ button:active:before {
     }
 }
 
-a:link { text-decoration: none; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:active { text-decoration: none; }
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
 
 
-  
-  /* Fade in tabs */
-  @-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  
-  @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
