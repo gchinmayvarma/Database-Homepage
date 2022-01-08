@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>360 VR Educator Home page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <?php
+        $myDirectory = opendir("Files");
+        while($entryName = readdir($myDirectory)) {
+            $dirArray[] = $entryName;
+        }
+        closedir($myDirectory);
+        $indexCount	= count($dirArray);
+    ?>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../../round.gif" class="logogif">
+            <div class="logotext">
+                <div class="stack" style="--stacks: 3;">
+                    <span style="--index: 0;">360 VR</span>
+                    <span style="--index: 1;">360 VR</span>
+                    <span style="--index: 2;">360 VR</span>
+                    <div class="logotextright">Educator</div>
+                </div>
+            </div>
+        </div>
+        <!-- <h6>Dashboard</h6> -->
+        Database Browser
+        <button class="tablinks" role="button" onclick="openPage(event,'bImages')">Images</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'bVideos')">Videos</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'bImages360' )">360 Images</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'bVideos360' )">360 Videos</button>
+        <button class="tablinks" role="button" onclick="openPage(event,'bAll' )">Other Files</button>
+
+        <div>
+            <img src="../../collegelogo.png" class="collegelogo">
+            <img src="../../cemcalogo.png" class="collegelogo">
+        </div>
+    </div>
+    <div class="mainpage">
+        <a href="../../"><button role="button" class="gobackbutton">Go to Dashboard</button></a>
+        <div id="defaultshot" class="inmainpage">
+            <h1>
+                360 VR Educator Database.
+            </h1>
+            <p>
+                All the Work / Contents / Materials which have been created in this platform are made available
+                under a <a href="http://creativecommons.org/licenses">Creative Commons Attribution-Share Alike 4.0
+                    License</a> (International) by CEMCA.<br>
+            </p>
+        </div>
+        <div id="bImages" class="inmainpage">
+            <h1>Browse Images</h1>
+        </div>
+        <div id="bVideos" class="inmainpage">
+            <h1>Browse Videos</h1>
+        </div>
+        <div id="bImages360" class="inmainpage">
+            <h1>Browse 360 Images</h1>
+        </div>
+        <div id="bVideos360" class="inmainpage">
+            <h1>Browse 360 Videos</h1>
+        </div>
+        <div id="bAll" class="inmainpage">
+            <h1>Browse All Files</h1>
+            <ul>
+                <?php
+		        for($index=0; $index < $indexCount; $index++) {
+			        $extension = substr($dirArray[$index], -3);
+			        if (1||$extension == 'jpg'){
+				    <!-- echo '<li><img src="Files/' . $dirArray[$index] . '" alt="File" /><span>' . $dirArray[$index] . '</span>'; -->
+				    echo '<li><span>' . $dirArray[$index] . '</span>';
+			        }	
+		        }
+		        ?>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openPage(evt, Name) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("inmainpage");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(Name).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        let startopenpage = "defaultshot"
+        document.getElementById(startopenpage).style.display = "block";
+        document.getElementById(startopenpage).className += " active";
+        let details = navigator.userAgent, regexp = /android|iphone|kindle|ipad/i;
+        let isMobileDevice = regexp.test(details);
+        if (!isMobileDevice) {
+            document.body.style.zoom = 1.75;
+            let b = document.getElementsByClassName("gobackbutton")[0];
+            b.style.width = "200px";
+            b.style.float = "right";
+            b.style.webkitTransform = "translate(-50%, -50%)";
+            b.style.transform = "translate(4%, -75%)";
+            b.style.marginLeft = "10px";
+            b.style.marginTop = "50px"
+        }
+    </script>
+    <footer>
+        <span class="footed">
+            Developed by IIT Kharagpur
+        </span>
+        <span class="footedd">
+            Funded by CEMCA
+        </span>
+    </footer>
+</body>
+
+</html>

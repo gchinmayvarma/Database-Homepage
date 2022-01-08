@@ -265,9 +265,15 @@ footer {
 }
 .footed{
     font-size: 10px;
-    margin-left: 16vw;
+    margin-left: 19vw;
 }
 .footedd{
     font-size: 10px;
     margin-left: 7vw;
+}
+.gobackbutton{
+    margin-top: 2px;
+    /* width: 200px; */
+    /* float: right; -ms-transform: translate(-50%, -50%); */
+  /* transform: translate(4%, -75%); margin-left :10px; */
 }
